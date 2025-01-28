@@ -1,0 +1,64 @@
+---
+title: Installation
+description: Install PlaywrightPHP and start writing tests
+---
+ 
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<img className="only-on-light" src="https://raw.githubusercontent.com/victor-teles/playwright-php/refs/heads/main/.github/banner.webp" alt="PlaywrightPHP" />
+<img className="only-on-dark" src="https://raw.githubusercontent.com/victor-teles/playwright-php/refs/heads/main/.github/banner-dark.webp" alt="PlaywrightPHP" />
+
+Welcome to PlaywrightPHP! This guide will walk you through setting up PlaywrightPHP in your project. The installation process involves three simple steps:
+ 
+<Steps>
+    <Step> 
+    ### Install PlaywrightPHP via Composer
+    ```bash
+    composer require victor-teles/playwright-php
+    ```
+    </Step>
+ 
+    <Step>
+    ### Install npm dependencies
+    ```package-install
+    npm install https://github.com/zoonru/puphpeteer/tarball/zoon
+    ```
+    </Step>
+
+    <Step>
+    ### Install browser drivers (optional)
+    ```bash
+    npx playwright install
+    ```
+    </Step>
+
+
+    <Step>
+    ### Write your first test and run it 🎊
+    ```php
+    <?php
+    use PlaywrightPhp\Playwright;
+    
+    class ExampleTest extends TestCase
+    {
+        public function test_example()
+        {
+            $playwright = new Playwright(); // launch playwright
+            $browser = $playwright->launch(); // launch browser
+    
+            $page = $browser->newPage(); // create new page
+            $page->goto('https://example.com'); // navigate to example.com
+            $page->screenshot(['path' => 'screenshot.png']); // take screenshot
+        }
+    }
+    ```
+    </Step>
+</Steps>
+
+### System Requirements
+- PHP 8.0+
+- Composer
+- Latest version of Node.js 18, 20 or 22
+- Windows 10+, Windows Server 2016+ or Windows Subsystem for Linux (WSL).
+- macOS 13 Ventura, or later.
+- Debian 12, Ubuntu 22.04, Ubuntu 24.04, on x86-64 and arm64 architecture.

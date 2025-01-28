@@ -1,0 +1,59 @@
+---
+title: Basic Usage
+description: Get started with PlaywrightPHP
+---
+import { Banner } from 'fumadocs-ui/components/banner';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+In this section, we'll learn basic usage of PlaywrightPHP. If you want to see more details about playwright check the offical documentation [here](https://playwright.dev/docs/intro).
+
+## Navigating to a page
+
+```php
+<?php
+
+use Playwright\Playwright;
+
+$playwright = new Playwright();
+$browser = $playwright->launch();
+$page = $browser->newPage();
+
+$page->goto('https://example.com');
+
+$browser->close();
+```
+
+## Use different browsers
+
+<Accordions>
+  <Accordion title="Chromium">
+    ```php
+    <?php
+
+    use Playwright\Playwright;
+
+    $playwright = new Playwright(['browser' => 'chromium']);
+    $browser = $playwright->launch();
+    ```
+  </Accordion>
+  <Accordion title="Firefox">
+    ```php
+    <?php
+
+    use Playwright\Playwright;
+
+    $playwright = new Playwright(['browser' => 'firefox']);
+    $browser = $playwright->launch();
+    ```
+  </Accordion>
+  <Accordion title="WebKit">
+    ```php
+    <?php
+
+    use Playwright\Playwright;
+
+    $playwright = new Playwright(['browser' => 'webkit']);
+    $browser = $playwright->launch();
+    ```
+  </Accordion>
+</Accordions>
