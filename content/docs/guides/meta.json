@@ -3,5 +3,5 @@
   "description": "How to use Sqala",
   "icon": "Building2",
   "root": true,
-  "pages": ["---Getting Started---", "index", "differences", "---Examples---", "basic", "remote", "selectors", "take-screenshot"]
+  "pages": ["---Getting Started---", "index", "authenticate", "webhooks", "errors"]
 }
