@@ -1,0 +1,17 @@
+backend:
+  name: github
+  branch: main
+  repo: victor-teles/sqala-docs
+media_folder: public/images
+public_folder: public/images
+collections:
+  - label: 'Documentation'
+    name: 'docs'
+    folder: 'content/docs'
+    create: true
+    nested:
+      depth: 100
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Description', name: 'description', widget: 'string', required: false }
+      - { label: 'Icon', name: 'icon', widget: 'string', required: false }
